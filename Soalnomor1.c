@@ -53,9 +53,22 @@ int main()
     float q6 = (c7 / (c6 + c7)) * qp1;
     float q7 = qp1 - q6;
 
-    // Menampilkan hasil
+    //Menghitung V1-V7
+    float v1 = q1 * c1;
+    float v2 = q2 * c2;
+    float v3 = qp2 * c3;
+    float v4 = q4 * c4;
+    float v5 = qp1 * c5;
+    float v6 = q6 * c6;
+    float v7 = q7 * c7;
+
+    // Hasil Ctotal
     printf("Kapasitansi Total: %.2f Farad\n", hasilCtotal);
+
+    //Hasil Qtotal
     printf("Q totalnya adalaj :%.2f Coulomb\n", qTotal);
+
+    // Hasil Q1-Q7
     printf("Q1: %.2f Coulomb\n", q1);
     printf("Q2: %.2f Coulomb\n", q2);
     printf("Q3: %.2f Coulomb\n", qp2);
@@ -63,6 +76,15 @@ int main()
     printf("Q5: %.2f Coulomb\n", qp1);
     printf("Q6: %.2f Coulomb\n", q6);
     printf("Q7: %.2f Coulomb\n", q7);
+
+    //Hasil V1-V7
+    printf("V1: %.2f Volt\n", v1);
+    printf("V2: %.2f Volt\n", v2);
+    printf("V3: %.2f Volt\n", v3);
+    printf("V4: %.2f Volt\n", v4);
+    printf("V5: %.2f Volt\n", v5);
+    printf("V6: %.2f Volt\n", v6);
+    printf("V7: %.2f Volt\n", v7);
 
 
     return 0;
