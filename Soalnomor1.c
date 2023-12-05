@@ -138,7 +138,12 @@ int main()
             printf("V1: %.2f Volt\n", V1);
             printf("V2: %.2f Volt\n", V2);
         }
-        
+        else if (pilihan == 3){
+            printf("Terima kasih, program telah selesai.\n");
+        }
+        else {
+            printf("Pilihan tidak valid.\n");
+        }
     }
 
     return 0;
