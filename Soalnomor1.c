@@ -122,7 +122,10 @@ int main()
 
     // Menampilkan hasil perhitungan Rtotal
     printf("Rtotal: %.2f Ohm\n", hasilRtotal);
-    
+    printf("I1: %.2f Ampere\n", i1);
+    printf("I2: %.2f Ampere\n", i2);
+    printf("V1: %.2f Volt\n", V1);
+    printf("V2: %.2f Volt\n", V2);
 
 
     return 0;
