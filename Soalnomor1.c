@@ -27,6 +27,23 @@ float hitungCtotal(float c1, float c2, float c3, float c4, float c5, float c6, f
     return ctotal;
 }
 
+float hitungRtotal(float r1, float r2, float r3, float r4, float r5, float r6, float r7) {
+    float ra, rb, rc, rp1, rp2, rp3, rp4, rs1, rs2, rtotal;
+
+    ra = r6 + r7 + ((r6 * r7) / r5);
+    rb = r5 + r6 + ((r5 * r6) / r7);
+    rc = r4 + r7 + ((r4 * r7) / r5);
+    rp1 = 1 / ((1 / ra) + (1 / rb));
+    rp2 = 1 / ((1 / rp1) + (1 / r3));
+    rp3 = 1 / ((1 / rc) + (1 / r4));
+    rp4 = 1 / ((1 / rp2) + (1 / rp1));
+    rs1 = 1 / ((1 / rp4) + (1 / rp3) );
+    rs2 = 1 / ((1 / rs1) + (1 / r1) + (1 / r2));
+
+    rtotal = rs2;
+    return rtotal;
+}
+
 int main()
 {
     // Nilai-nilai kapasitor
@@ -85,6 +102,27 @@ int main()
     printf("V5: %.2f Volt\n", v5);
     printf("V6: %.2f Volt\n", v6);
     printf("V7: %.2f Volt\n", v7);
+
+    float r1 = 10, r2 = 20, r3 = 10, r4 = 20, r5 = 10, r6 = 20, r7 = 10;
+    float v = 50;
+
+    // Menghitung Rtotal
+    float hasilRtotal = hitungRtotal(r1, r2, r3, r4, r5, r6, r7);
+
+    // Menghitung i total
+    float itotal = v / hasilRtotal;
+
+    // Menghitung i1-i7
+    float i1 = itotal;
+    float i2 = itotal; // disini hanya sampe i2 karna sisanya sudah kepakai di transfomasinya
+
+    // Menghitung V1 dan V2
+    float V1 = i1 * r1;
+    float V2 = i2 * r2;
+
+    // Menampilkan hasil perhitungan Rtotal
+    printf("Rtotal: %.2f Ohm\n", hasilRtotal);
+    
 
 
     return 0;
